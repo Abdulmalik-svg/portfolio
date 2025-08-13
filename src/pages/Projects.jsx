@@ -45,14 +45,14 @@ const projects = [
 
 const Projects = () => {
   return (
-    <div className="min-h-screen bg-slate-950 text-white px-6 md:px-20 py-16">
-      <h2 className="text-4xl font-bold text-sky-400 mb-12 text-center">My Projects</h2>
+    <div className="min-h-screen bg-gray-200 text-black px-6 md:px-20 pt-32 pb-16">
+      <h2 className="text-4xl font-bold text-black mb-12 text-center">My Projects</h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-slate-900 rounded-xl overflow-hidden shadow-md hover:shadow-sky-500/20 transition"
+            className="bg-white border border-gray-300 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
           >
             <img
               src={project.image}
@@ -60,13 +60,13 @@ const Projects = () => {
               className="w-full h-40 object-cover"
             />
             <div className="p-6">
-              <h3 className="text-2xl font-semibold text-white mb-2">{project.title}</h3>
-              <p className="text-slate-400 mb-4">{project.description}</p>
+              <h3 className="text-2xl font-semibold text-black mb-2">{project.title}</h3>
+              <p className="text-gray-800 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="bg-sky-600 text-xs text-white px-2 py-1 rounded-full"
+                    className="bg-black text-xs text-white px-2 py-1 rounded-full"
                   >
                     {tech}
                   </span>
@@ -77,7 +77,7 @@ const Projects = () => {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sky-400 hover:animate-bounce transition"
+                  className="text-black font-medium hover:nounderline"
                 >
                   Live Demo
                 </a>
@@ -85,7 +85,7 @@ const Projects = () => {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:animate-bounce transition"
+                  className="text-gray-700 hover:nounderline"
                 >
                   GitHub
                 </a>
