@@ -41,6 +41,27 @@ const projects = [
     demo: 'https://sign-image.vercel.app/',
     image: '/images/sign gallery.png',
   },
+
+  // ===========================
+  // ⭐ NEW PROJECTS
+  // ===========================
+
+  {
+    title: 'Sandwich Project',
+    description: 'A clean and modern sandwich ordering UI built with React and Tailwind.',
+    tech: ['React', 'Tailwind'],
+    github: 'https://github.com/Abdulmalik-svg/sandwich-project',
+    demo: 'https://sandwich-project-mu.vercel.app/',
+    image: '/images/sandwich.png',
+  },
+  {
+    title: 'FundMe Blockchain dApp',
+    description: 'A smart contract–powered crowdfunding platform with wallet connection.',
+    tech: ['Solidity', 'React', 'Web3', 'MetaMask'],
+    github: 'https://github.com/Abdulmalik-svg/fund-me-dapp',
+    demo: 'https://blockchain-d-app.vercel.app/',
+    image: '/images/fundMe.png', // UPDATED ✔️
+  },
 ];
 
 const Projects = () => {
