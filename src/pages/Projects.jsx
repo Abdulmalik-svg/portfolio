@@ -4,6 +4,16 @@ import { useState } from 'react';
 
 const projects = [
   {
+    title: 'ShieldAudit',
+    description: 'Real-time EVM smart contract security analyzer. Detects honeypots, rug pulls, trading taxes, and wallet portfolio risks using on-chain data and GoPlus Security.',
+    tech: ['React', 'Tailwind', 'Viem', 'GoPlus API', 'Web3'],
+    github: 'https://github.com/Abdulmalik-svg/Analyzer',
+    demo: 'https://analyzer-rho-six.vercel.app/',
+    image: '/images/sheildaudit.png',
+    category: 'Web3',
+    featured: true,
+  },
+  {
     title: 'Guess My Number',
     description: 'A fun number guessing game built with JavaScript logic and styled UI.',
     tech: ['JavaScript', 'HTML', 'CSS'],
@@ -83,6 +93,8 @@ const Projects = () => {
   const filteredProjects = selectedCategory === 'All' 
     ? projects 
     : projects.filter(p => p.category === selectedCategory);
+
+  const web3Count = projects.filter(p => p.category === 'Web3').length;
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 text-slate-900 overflow-hidden">
@@ -177,6 +189,10 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.parentNode.classList.add('flex', 'items-center', 'justify-center');
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -260,14 +276,13 @@ const Projects = () => {
         {/* ========= STATS SECTION ========= */}
         <section className="max-w-6xl mx-auto pt-16">
           <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-12 md:p-16 relative overflow-hidden shadow-2xl">
-            {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl" />
             
             <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
                 { num: `${projects.length}+`, label: 'Projects Built' },
-                { num: '4', label: 'Web3 dApps' },
+                { num: `${web3Count}`, label: 'Web3 dApps' },
                 { num: '100%', label: 'Client Satisfaction' },
                 { num: '24/7', label: 'Support Available' },
               ].map((stat, i) => (
